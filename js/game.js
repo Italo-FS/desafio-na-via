@@ -3,9 +3,9 @@ const spanPlayer = document.querySelector(".player");
 const timer = document.querySelector(".timer");
 
 const difficulty = {
-  easy: 4,
-  medium: 9,
-  hard: 14,
+  easy: 3,
+  medium: 5,
+  hard: 7,
 }
 
 const createElement = (tag, className) => {
