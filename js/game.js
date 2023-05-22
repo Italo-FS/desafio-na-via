@@ -23,9 +23,9 @@ const checkEndGame = () => {
 
     if (disabledCards.length === numberOfQuestions * 2) {
         clearInterval(this.loop);
-        alert(
-            `Parabéns, ${spanPlayer.innerHTML}! Seu tempo foi de: ${timer.innerHTML}`
-        );
+        // alert(
+        //     `Parabéns, ${spanPlayer.innerHTML}! Seu tempo foi de: ${timer.innerHTML}`
+        // );
         window.location = 'game.html';
     }
 };
@@ -49,7 +49,7 @@ const checkCards = () => {
 
             firstCard = "";
             secondCard = "";
-        }, 500);
+        }, 1000);
     }
 };
 
@@ -103,8 +103,8 @@ const loadGame = () => {
     const sortedCards = sortQuestions();
     let selectedCards = [];
     sortedCards.map((x) => {
-        selectedCards.push({ id: x.id, content: x.question });
-        selectedCards.push({ id: x.id, content: `R: ${x.answer}` });
+        selectedCards.push({ id: x.id, content: `Pergunta<br>${x.question}` });
+        selectedCards.push({ id: x.id, content: `Resposta<br>${x.answer}` });
     });
 
     const shuffledArray = selectedCards.sort(() => Math.random() - 0.5);
@@ -115,15 +115,7 @@ const loadGame = () => {
     });
 };
 
-const startTimer = () => {
-    this.loop = setInterval(() => {
-        const currentTime = +timer.innerHTML;
-        timer.innerHTML = currentTime + 1;
-    }, 1000);
-};
-
 window.onload = () => {
     spanPlayer.innerHTML = localStorage.getItem("player");
-    startTimer();
     loadGame();
 };

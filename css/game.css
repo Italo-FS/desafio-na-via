@@ -25,6 +25,13 @@ header {
   border-radius: 5px;
 }
 
+.header-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 30px;
+}
+
 .grid {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
@@ -87,9 +94,13 @@ header {
     font-size: 0.8em;
   }
 
+  .header-container {
+    grid-gap: 10px;
+  }
+
   .grid {
-    gap: 10px;
     grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
   }
 
   .card-content {
@@ -99,5 +110,11 @@ header {
 
   .face {
     border: 2px solid #E68301;
+  }
+}
+
+@media screen and (max-width:920px) and (orientation: landscape) {
+  .grid {
+    grid-template-columns: repeat(6, 1fr);
   }
 }
