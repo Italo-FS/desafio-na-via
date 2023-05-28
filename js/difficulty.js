@@ -4,7 +4,7 @@ const button_hard = document.querySelector('.difficulty__button_hard');
 
 function setDifficulty(difficulty) {  
   localStorage.setItem('difficulty', difficulty);
-  window.location = 'game.html';
+  window.location = 'mode.html';
 }
 
 button_easy.addEventListener('click', function() {

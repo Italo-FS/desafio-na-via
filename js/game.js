@@ -115,7 +115,31 @@ const loadGame = () => {
     });
 };
 
+function setPlayers() {
+    const mode = localStorage.getItem("mode");
+	const headerContainer = document.querySelector('.header-container');
+	
+	if (mode === 'single') {
+		const header = document.createElement('header');
+		const player = document.createElement('span');
+		const score = document.createElement('span');
+
+		player.innerHTML = localStorage.getItem("player");
+
+		header.appendChild(player)
+		header.appendChild(score)
+		headerContainer.appendChild(header)
+	} else if (mode === 'local') {
+	
+	} else if (mode === 'p2p') {
+	
+	} else {
+		throw new Error('Modo de jogo não suportado.')
+	}
+}
+
 window.onload = () => {
-    spanPlayer.innerHTML = localStorage.getItem("player");
+    // spanPlayer.innerHTML = localStorage.getItem("player");
+	setPlayers()
     loadGame();
 };
