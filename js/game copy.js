@@ -17,23 +17,6 @@ const createElement = (tag, className) => {
 let firstCard = "";
 let secondCard = "";
 
-let players = [
-    {
-        name: 'Player1',
-        id: 'PlayerA',
-        score: 0,
-        turn: true,
-		color: '#0000FF',
-    },
-    {
-        name: 'Player2',
-        id: 'PlayerB',
-        score: 0,
-        turn: false,
-		color: '#FF0000',
-    },
-]
-
 const checkEndGame = () => {
     const disabledCards = document.querySelectorAll(".disabled-card");
     const numberOfQuestions = difficulty[localStorage.getItem("difficulty")]
@@ -55,12 +38,9 @@ const checkCards = () => {
         firstCard.firstChild.classList.add("disabled-card");
         secondCard.firstChild.classList.add("disabled-card");
 
-		firstCard
-
         firstCard = "";
         secondCard = "";
 
-		switchPlayer(getTurnOwner());
         checkEndGame();
     } else {
         setTimeout(() => {
@@ -69,8 +49,6 @@ const checkCards = () => {
 
             firstCard = "";
             secondCard = "";
-			
-			switchPlayer(getTurnOwner());
         }, 1000);
     }
 };
@@ -90,7 +68,7 @@ const revealCard = ({ target }) => {
     }
 };
 
-const sortQuestions = () => {
+function sortQuestions() {
     const sorteio = [];
     const numberOfQuestions = difficulty[localStorage.getItem("difficulty")]
 
@@ -135,56 +113,26 @@ const loadGame = () => {
         const card = createCard(x.id, x.content);
         grid.appendChild(card);
     });
-};
-
-function getTurnOwner() {
-    for(let i=0; i<players.length; i++) {
-        if (players[i]['turn']) return i;
-    }
-}
-
-const switchPlayer = (playerTurnIndex) => {
-	console.log(playerTurnIndex)
-	if (playerTurnIndex === players.length - 1) {
-		players[0]['turn'] = true;
-	} else {
-		players[playerTurnIndex+1]['turn'] = true;
-	}
-	players[playerTurnIndex]['turn'] = false;
 
 	updatePlayerColors(getTurnOwner());
-}
+};
 
-const updatePlayerColors = (playerTurnIndex) => {
-	console.log(players[playerTurnIndex].color)
-	document.querySelectorAll('.face').forEach(x => {
-		if (!x.classList.contains('disabled-card')) {
-			x.style = 'border: 5px solid ' + players[playerTurnIndex].color
-		}
-	});
-}
-
-const setPlayers = () => {
+function setPlayers() {
     const mode = localStorage.getItem("mode");
 	const headerContainer = document.querySelector('.header-container');
-
-	const createPlayer = (playerName) => {
+	
+	if (mode === 'single') {
 		const header = document.createElement('header');
 		const player = document.createElement('span');
 		const score = document.createElement('span');
 
-		player.innerHTML = playerName;
+		player.innerHTML = localStorage.getItem("player");
 
-		header.appendChild(player);
-		header.appendChild(score);
-		headerContainer.appendChild(header);
-	}
-	
-	if (mode === 'single') {
-		createPlayer(localStorage.getItem("player"));		
+		header.appendChild(player)
+		header.appendChild(score)
+		headerContainer.appendChild(header)
 	} else if (mode === 'local') {
-		createPlayer(localStorage.getItem("player"));		
-		// createPlayer('Player 2');
+	
 	} else if (mode === 'p2p') {
 	
 	} else {
@@ -193,6 +141,7 @@ const setPlayers = () => {
 }
 
 window.onload = () => {
-	setPlayers();
+    // spanPlayer.innerHTML = localStorage.getItem("player");
+	setPlayers()
     loadGame();
 };

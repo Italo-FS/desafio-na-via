@@ -5,11 +5,12 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<link rel="stylesheet" href="../css/reset.css">
 	<link rel="stylesheet" href="../css/styles.css">
+	<link rel="stylesheet" href="../css/reset.css">
 
-	<script src="../js/hosting.js"></script>
+	<script src="../js/offering.js"></script>
 	<script src="../js/common.js"></script>
+	<script defer src="../js/hosting.js"></script>
 	<link rel="shortcut icon" href="../images/brain.png" type="image/x-icon">
 	<title>Desafio na Via | Hospedando</title>
 </head>
@@ -20,17 +21,27 @@
 			<h2>Hospedando</h2>
 		</div>
 
-		<div class="token__loading">
+		<div class="token__loading invisible">
 			<p>Aguarde, gerando token de conexão...</p>
 		</div>
 
-		<div class="token__content invisible">
+		<div class="token__content">
 			<p>Copie o código abaixo e envie para o segundo player.</p>
 			<br>
-			<p id="textoffer"></p>
+			<div class="token__container">
+				<p id="textoffer">{"type":"offer","sdp":"v=0\r\no=- 6870194557398074421 2 IN IP4 127.0.0.1\r\ns=-\r\nt=0 0\r\na=group:BUNDLE 0\r\na=extmap-allow-mixed\r\na=msid-semantic: WMS\r\nm=application 9 UDP/DTLS/SCTP webrtc-datachannel\r\nc=IN IP4 0.0.0.0\r\na=candidate:1504368894 1 udp 2113937151 7b851ab2-ef4a-4e45-a092-f8bcee537261.local 55386 typ host generation 0 network-cost 999\r\na=ice-ufrag:PylJ\r\na=ice-pwd:3stnQ+M0CBz3FHmGq6i5B3YP\r\na=ice-options:trickle\r\na=fingerprint:sha-256 44:02:DF:80:5C:AA:CD:46:E4:F5:AB:53:02:4A:FD:0B:82:93:37:2D:6E:E5:22:DF:E2:83:25:55:94:78:87:F5\r\na=setup:actpass\r\na=mid:0\r\na=sctp-port:5000\r\na=max-message-size:262144\r\n"}</p>
+			</div>
 		</div>
 
-		<button class="mode__button_p2p_copy invisible">Copiar</button>
+		<button class="menu__button connection__button_p2p_copy">Copiar</button>
+
+		<div class="token__content">
+			<p>Copie o código abaixo e envie para o segundo player.</p>
+			<br>
+			<div class="token__container">
+				<p id="textoffer">{"type":"offer","sdp":"v=0\r\no=- 6870194557398074421 2 IN IP4 127.0.0.1\r\ns=-\r\nt=0 0\r\na=group:BUNDLE 0\r\na=extmap-allow-mixed\r\na=msid-semantic: WMS\r\nm=application 9 UDP/DTLS/SCTP webrtc-datachannel\r\nc=IN IP4 0.0.0.0\r\na=candidate:1504368894 1 udp 2113937151 7b851ab2-ef4a-4e45-a092-f8bcee537261.local 55386 typ host generation 0 network-cost 999\r\na=ice-ufrag:PylJ\r\na=ice-pwd:3stnQ+M0CBz3FHmGq6i5B3YP\r\na=ice-options:trickle\r\na=fingerprint:sha-256 44:02:DF:80:5C:AA:CD:46:E4:F5:AB:53:02:4A:FD:0B:82:93:37:2D:6E:E5:22:DF:E2:83:25:55:94:78:87:F5\r\na=setup:actpass\r\na=mid:0\r\na=sctp-port:5000\r\na=max-message-size:262144\r\n"}</p>
+			</div>
+		</div>
 	</div>
 	<script>
 		createoffer();
