@@ -2,26 +2,37 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../css/reset.css">
-  <link rel="stylesheet" href="../css/game.css">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../css/game.css">
+	<link rel="stylesheet" href="../css/styles.css">
+	<link rel="stylesheet" href="../css/reset.css">
 
-  <script defer src="../js/questions.js"></script>
-  <script defer src="../js/game.js"></script>
-  <link rel="shortcut icon" href="../images/brain.png" type="image/x-icon">
+	<script defer src="../js/questions.js"></script>
+	<script defer src="../js/game.js"></script>
+	<link rel="shortcut icon" href="../images/brain.png" type="image/x-icon">
 
-  <title>Memory Game</title>
+	<title>Memory Game</title>
 </head>
 
 <body>
 
-  <main>
-    <div class="header-container"></div>
+	<main>
+		<button type="submit" class="menu__button game__button_giveUp">Desistir</button>
+		<div class="header-container"></div>
 
-    <div class="grid"></div>
-  </main>
+		<div class="grid"></div>
+	</main>
 
+	<div class="game-message" hidden>
+		<p id="mainMessage"></p>
+
+		<div>
+			<a href="https://forms.gle/3S8ZK1ApnFpP8DBK9"><button type="submit"
+					class="menu__button game__button_answerForm">Responder Formulário</button></a>
+			<button type="submit" class="menu__button game__button_playAgain">Jogar Novamente</button>
+		</div>
+	</div>
 </body>
 
 </html>

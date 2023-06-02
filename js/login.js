@@ -14,18 +14,10 @@ const validateInput = ({ target }) => {
 const handleSubmit = (event) => {
   event.preventDefault();
 
-  localStorage.setItem('player', input.value);
-  localStorage.setItem('token', token());
+  localStorage.setItem('playerAName', input.value);
 
   window.location = 'pages/difficulty.html';
 }
-
-function token() {
-	var rand = function() {
-		return Math.random().toString(36).substr(2); // remove `0.`
-	};
-    return rand() + rand(); // to make it longer
-};
 
 input.addEventListener('input', validateInput);
 form.addEventListener('submit', handleSubmit);
