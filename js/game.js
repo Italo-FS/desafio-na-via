@@ -71,8 +71,8 @@ const checkCards = () => {
 		secondCard = "";
 
 		players.addScoreToActualPlayer(1)
-		players.switchTurn();
 		checkEndGame();
+		players.switchTurn();
 	} else {
 		setTimeout(() => {
 			firstCard.classList.remove("reveal-card");
