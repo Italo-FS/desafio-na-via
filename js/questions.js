@@ -3,36 +3,43 @@ const questions = [
         id: 1,
         question: "Qual é o limite de velocidade em áreas urbanas?",
         answer: "60 km/h.",
+        answerImage: "R-19.png",
     },
     {
         id: 2,
         question: "O que significa a sigla CNH?",
         answer: "Carteira Nacional de Habilitação.",
+        answerImage: "cnh.png",
     },
     {
         id: 3,
         question: "Qual é a cor do semáforo que indica 'atenção'?",
         answer: "Amarelo.",
+        answerImage: "traffic_light_yellow.jpg",
     },
     {
         id: 4,
-        question: "O que significa a sigla CET?",
-        answer: "Companhia de Engenharia de Tráfego.",
+        question: "O que significa a sigla AMC?",
+        answer: "Autarquia Municipal de Trânsito.",
+        answerImage: "amc.png",
     },
     {
         id: 5,
         question: "Qual é o órgão responsável pela fiscalização do trânsito?",
-        answer: "Departamento de Trânsito (Detran).",
+        answer: "Departamento Estadual de Trânsito (Detran).",
+        answerImage: "detran_ce.png",
     },
     {
         id: 6,
-        question: "Qual é o documento obrigatório para dirigir um veículo?",
-        answer: "CNH.",
+        question: "Qual é a cor do semáforo que indica 'pare'?",
+        answer: "Vermelho.",
+        answerImage: "traffic_light_red.jpg",
     },
     {
         id: 7,
         question: "O que significa a sigla DPVAT?",
         answer: "Danos Pessoais Causados por Veículos Automotores de Via Terrestre.",
+        answerImage: "dpvat.jpg",
     },
     {
         id: 8,
@@ -43,6 +50,7 @@ const questions = [
         id: 9,
         question: "O que é uma rotatória?",
         answer: "Uma interseção circular de vias.",
+        answerImage: "R-33.jpg",
     },
     {
         id: 10,
@@ -52,27 +60,32 @@ const questions = [
     {
         id: 11,
         question: "Qual é o significado do sinal de trânsito triangular?",
-        answer: "Atenção.",
+        answer: "Dê preferência.",
+        questionImage: "R-2.png"
     },
     {
         id: 12,
         question: "O que significa a sigla ANTT?",
         answer: "Agência Nacional de Transportes Terrestres.",
+        questionImage: "antt.png"
     },
     {
         id: 13,
         question: "O que é uma faixa de pedestres?",
         answer: "Espaço demarcado para a travessia segura de pedestres.",
+        questionImage: "A-32.png"
     },
     {
         id: 14,
         question: "O que significa a sigla PRF?",
         answer: "Polícia Rodoviária Federal.",
+        questionImage: "prf.png"
     },
     {
         id: 15,
         question: "Qual é o limite de álcool no sangue permitido para motoristas?",
-        answer: "0,05%.",
+        answer: "0,06%.",
+        questionImage: "alcohool.png"
     },
     {
         id: 16,

@@ -87,10 +87,18 @@ header {
 	opacity: 0.5;
 }
 
+.card-image {
+	max-height: 50%;
+	max-width: 90%;
+	display: block;
+	margin: 5% auto;
+}
+
 .game-message {
 	z-index: 2;
-	width: 60%;
-	height: 40%;
+	min-width: 60%;
+	max-width: 80%;
+	max-height: 80%;
 	position: fixed;
 	top: 50%;
 	left: 50%;
@@ -113,7 +121,7 @@ header {
 	}
 }
 
-@media screen {
+@media screen and (max-width:920px) {
 	header {
 		margin-bottom: 10px;
 		padding: 15px;
@@ -142,8 +150,6 @@ header {
 	.game-message {
 		font-size: 0.8em;
 		border: 2px solid #E68301;
-		width: 80%;
-		height: 80%;
 
 		& p, & span, & a {
 			font-family: "Roboto Mono", monospace;

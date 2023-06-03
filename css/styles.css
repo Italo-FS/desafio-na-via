@@ -120,6 +120,7 @@
 /* Jogo */
 .game__button_playAgain {
 	background-color: #00cc66;
+	border-color: #b2df28;
 }
 
 .game__button_giveUp {
