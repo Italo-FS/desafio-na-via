@@ -21,6 +21,6 @@ button_local.addEventListener('click', function () {
 	setMode('local');
 });
 
-button_p2p.addEventListener('click', function () {
-	setMode('p2p');
-});
+// button_p2p.addEventListener('click', function () {
+// 	setMode('p2p');
+// });
