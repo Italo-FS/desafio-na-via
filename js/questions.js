@@ -3,7 +3,7 @@ const questions = [
         id: 1,
         question: "Qual é o limite de velocidade em áreas urbanas?",
         answer: "60 km/h.",
-        answerImage: "R-19.png",
+        answerImage: "R-19-60.png",
     },
     {
         id: 2,
@@ -50,7 +50,7 @@ const questions = [
         id: 9,
         question: "O que é uma rotatória?",
         answer: "Uma interseção circular de vias.",
-        answerImage: "R-33.jpg",
+        answerImage: "R-33.png",
     },
     {
         id: 10,
@@ -91,36 +91,43 @@ const questions = [
         id: 16,
         question: "O que é um radar de trânsito?",
         answer: "Um dispositivo eletrônico para monitorar a velocidade dos veículos.",
+        questionImage: "radar.png"
     },
     {
         id: 17,
         question: "O que significa a sigla DENATRAN?",
         answer: "Departamento Nacional de Trânsito.",
+        questionImage: "denatran.png"
     },
     {
         id: 18,
         question: "Qual é o sinal de trânsito que indica 'pare'?",
         answer: "Um octógono vermelho.",
+        questionImage: "R-1.png"
     },
     {
         id: 19,
-        question: "O que é uma lombada?",
-        answer: "Uma elevação na pista para reduzir a velocidade dos veículos.",
+        question: "O que é elevação na pista para reduzir a velocidade dos veículos?",
+        answer: "Uma saliência ou lombada.",
+        questionImage: "A-18.png"
     },
     {
         id: 20,
-        question: "O que significa a sigla SAMU?",
-        answer: "Serviço de Atendimento Móvel de Urgência.",
+        question: "Qual é a cor do semáforo que indica 'siga'?",
+        answer: "Verde.",
+        answerImage: "traffic_light_green.jpg",
     },
     {
         id: 21,
-        question: "Qual é o número de emergência para chamar a polícia no trânsito?",
-        answer: "190.",
+        question: "O que é uma via que o tráfego flui em apenas uma direção.",
+        answer: "É uma via de sentido único.",
+        answerImage: "R-24a.png",
     },
     {
         id: 22,
-        question: "O que é uma bicicleta elétrica?",
-        answer: "Uma bicicleta com motor elétrico para auxiliar o pedal.",
+        question: "O que é uma via exclusiva para o tráfego de bicicletas?",
+        answer: "É uma ciclovia.",
+        answerImage: "A-30b.png",
     },
     {
         id: 23,
@@ -129,13 +136,15 @@ const questions = [
     },
     {
         id: 24,
-        question: "Qual é o significado do sinal de trânsito quadrado?",
-        answer: "Regulamentação.",
+        question: "O que significa uma placa de redonda com um 'E' cortado",
+        answer: "Estacionamento proibido.",
+        answerImage: "R-6a.png",
     },
     {
         id: 25,
         question: "O que é um cinto de segurança?",
         answer: "Um dispositivo para proteger os ocupantes de um veículo em caso de acidente.",
+        questionImage: "E-1.png",
     },
     {
         id: 26,
@@ -144,43 +153,50 @@ const questions = [
     },
     {
         id: 27,
-        question: "Qual é a velocidade máxima permitida em rodovias federais?",
-        answer: "110 km/h.",
+        question: "Qual é a distância mínima que se deve manter de um ciclista ao ultrapassar?",
+        answer: "1,5 metros.",
+        questionImage: "distancia_ciclista.png",
     },
     {
         id: 28,
-        question: "O que é uma ciclovia?",
-        answer: "Uma via exclusiva para o tráfego de bicicletas.",
+        question: "Placa que proíbe conversão à esquerda",
+        answer: "Proibido virar à esquerda.",
+        questionImage: "R-4a.png",
     },
     {
         id: 29,
         question: "O que significa a sigla CONTRAN?",
         answer: "Conselho Nacional de Trânsito.",
+        questionImage: "contran.jpeg",
     },
     {
         id: 30,
-        question: "Qual é o significado do sinal de trânsito retangular?",
-        answer: "Indicação.",
+        question: "Qual é a punição por estacionar em vagas para pessoas com deficiência?",
+        answer: "Multa e remoção do veículo.",
+        questionImage: "deficiente.jpeg",
     },
     {
         id: 31,
-        question: "O que é um quebra-molas?",
-        answer: "Uma elevação na pista para reduzir a velocidade dos veículos.",
+        question: "Qual é o limite de velocidade em áreas escolares?",
+        answer: "30 km/h.",
+        questionImage: "R-19-30.png",
     },
     {
         id: 32,
-        question: "O que significa a sigla DER?",
-        answer: "Departamento de Estradas de Rodagem.",
+        question: "O que significam as placas de advertência?",
+        answer: "Alerta sobre algum perigo à frente.",
+        questionImage: "A-0.png",
     },
     {
         id: 33,
-        question: "Qual é o documento obrigatório para circular com um veículo?",
-        answer: "CRLV.",
+        question: "Qual é o significado de 'CRLV'?",
+        answer: "Certificado de Registro e Licenciamento de Veículo.",
     },
     {
         id: 34,
-        question: "O que significa a sigla CETET?",
-        answer: "Companhia de Engenharia de Trânsito e Transporte.",
+        question: "Placa que proíbe a circulação de veículos?",
+        answer: "Proibido trânsito de automóveis",
+        questionImage: "R-10.png",
     },
     {
         id: 35,
@@ -189,8 +205,9 @@ const questions = [
     },
     {
         id: 36,
-        question: "O que significa a sigla EPTC?",
-        answer: "Empresa Pública de Transporte e Circulação.",
+        question: "Qual é o limite de velocidade em vias de trânsito rápido?",
+        answer: "80 km/h.",
+        questionImage: "R-19-80.png",
     },
     {
         id: 37,
@@ -206,6 +223,7 @@ const questions = [
         id: 39,
         question: "O que é uma faixa exclusiva de ônibus?",
         answer: "Uma faixa reservada para a circulação exclusiva de ônibus.",
+        questionImage: "R-32.png",
     },
     {
         id: 40,
