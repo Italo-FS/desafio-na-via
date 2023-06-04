@@ -27,7 +27,7 @@ header {
 .header-container {
 	width: 100%;
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+	grid-template-columns: repeat(2, 1fr);
 	grid-gap: 30px;
 	justify-items: center;
 }
@@ -68,9 +68,9 @@ header {
 	margin: auto;
 	transform: rotateY(180deg);
 	display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
 }
 
 .back {
@@ -108,7 +108,7 @@ header {
 	position: fixed;
 	top: 50%;
 	left: 50%;
-	transform: translate(-50%, -50%);	
+	transform: translate(-50%, -50%);
 	background-size: white;
 	background-position: center;
 	border-radius: 5px;
@@ -116,7 +116,9 @@ header {
 	background-color: white;
 	border: 5px solid #E68301;
 
-	& p, & span, & a {
+	& p,
+	& span,
+	& a {
 		font-family: "Roboto Mono", monospace;
 		text-align: justify;
 	}
@@ -154,6 +156,13 @@ header {
 		font-size: 0.8rem;
 	}
 
+	.card-image {
+		max-height: 20%;
+		max-width: 90%;
+		display: block;
+		margin: 2% auto;
+	}
+
 	.face {
 		border: 2px solid #E68301;
 	}
@@ -162,9 +171,23 @@ header {
 		font-size: 0.8em;
 		border: 2px solid #E68301;
 
-		& p, & span, & a {
+		& p,
+		& span,
+		& a {
 			font-family: "Roboto Mono", monospace;
 			text-align: justify;
+		}
+	}
+
+	.mainButtons {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 5px;
+		margin: 0 auto;
+
+		& .menu__button {
+			min-width: 150px;
+			max-width: 150px;
 		}
 	}
 }
