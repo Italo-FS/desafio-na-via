@@ -1,6 +1,6 @@
-const input = document.querySelector('.login__input');
-const button = document.querySelector('.login__button');
-const form = document.querySelector('.login-form');
+const input = document.querySelector('.menu__input');
+const button = document.querySelector('.menu__button');
+const form = document.querySelector('.menu-form');
 
 const validateInput = ({ target }) => {
 	if (target.value.length > 2) {
@@ -15,7 +15,7 @@ const handleSubmit = (event) => {
 	event.preventDefault();
 	if (document.querySelector("input").value.length < 3) return;
 	localStorage.setItem('playerAName', input.value);
-	window.location = 'pages/difficulty.html';
+	window.location = 'pages/mode.html';
 }
 
 input.addEventListener('input', validateInput);

@@ -5,7 +5,7 @@ const button_p2p = document.querySelector('.mode__button_p2p_multiplayer');
 function setMode(mode) {
 	localStorage.setItem('mode', mode);
 	if (mode === 'single' || mode === 'local') {
-		window.location = 'game.html';
+		window.location = 'difficulty.html';
 	} else if (mode === 'p2p') {
 		window.location = 'connection.html';
 	} else {

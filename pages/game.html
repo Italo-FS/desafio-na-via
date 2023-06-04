@@ -6,7 +6,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="../css/game.css">
 	<link rel="stylesheet" href="../css/styles.css">
-	<link rel="stylesheet" href="../css/reset.css">
 
 	<script defer src="../js/questions.js"></script>
 	<script defer src="../js/game.js"></script>
@@ -18,7 +17,11 @@
 <body>
 
 	<main>
-		<button type="submit" class="menu__button game__button_giveUp">Desistir</button>
+		<div>
+			<button type="submit" class="menu__button back_button" onclick="history.back()">Voltar</button>
+			<button type="submit" class="menu__button game__button_giveUp">Desistir</button>
+		</div>
+
 		<div class="header-container"></div>
 
 		<div class="grid"></div>
@@ -27,7 +30,7 @@
 	<div class="game-message" hidden>
 		<p id="mainMessage"></p>
 
-		<div>
+		<div class="menu__buttonContainer horizontal">
 			<a href="https://forms.gle/3S8ZK1ApnFpP8DBK9"><button type="submit"
 					class="menu__button game__button_answerForm">Responder Formulário</button></a>
 			<button type="submit" class="menu__button game__button_playAgain">Jogar Novamente</button>

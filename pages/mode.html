@@ -5,7 +5,6 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<link rel="stylesheet" href="../css/reset.css">
 	<link rel="stylesheet" href="../css/styles.css">
 
 	<script defer src="../js/mode.js"></script>
@@ -20,9 +19,13 @@
 			<h2>Modo de Jogo</h2>
 		</div>
 
-		<button type="submit" class="menu__button mode__button_singleplayer">Singleplayer</button>
-		<button type="submit" class="menu__button mode__button_local_multiplayer">Multiplayer Local</button>
-		<!-- <button type="submit" class="menu__button mode__button_p2p_multiplayer">Multiplayer P2P</button> -->
+		<div class="menu__buttonContainer vertical">
+			<button type="submit" class="menu__button mode__button_singleplayer">Singleplayer</button>
+			<button type="submit" class="menu__button mode__button_local_multiplayer">Multiplayer Local</button>
+			<!-- <button type="submit" class="menu__button mode__button_p2p_multiplayer">Multiplayer P2P</button> -->
+			<button type="submit" class="menu__button back_button" onclick="history.back()">Voltar</button>
+		</div>
+
 	</div>
 
 </body>

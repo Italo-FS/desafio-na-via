@@ -15,7 +15,7 @@ const questions = [
         id: 3,
         question: "Qual é a cor do semáforo que indica 'atenção'?",
         answer: "Amarelo.",
-        answerImage: "traffic_light_yellow.jpg",
+        answerImage: "traffic_light_yellow.png",
     },
     {
         id: 4,
@@ -33,13 +33,13 @@ const questions = [
         id: 6,
         question: "Qual é a cor do semáforo que indica 'pare'?",
         answer: "Vermelho.",
-        answerImage: "traffic_light_red.jpg",
+        answerImage: "traffic_light_red.png",
     },
     {
         id: 7,
         question: "O que significa a sigla DPVAT?",
         answer: "Danos Pessoais Causados por Veículos Automotores de Via Terrestre.",
-        answerImage: "dpvat.jpg",
+        answerImage: "dpvat.png",
     },
     {
         id: 8,
@@ -67,19 +67,19 @@ const questions = [
         id: 12,
         question: "O que significa a sigla ANTT?",
         answer: "Agência Nacional de Transportes Terrestres.",
-        questionImage: "antt.png"
+        answerImage: "antt.png"
     },
     {
         id: 13,
         question: "O que é uma faixa de pedestres?",
         answer: "Espaço demarcado para a travessia segura de pedestres.",
-        questionImage: "A-32.png"
+        questionImage: "A-32b.png"
     },
     {
         id: 14,
         question: "O que significa a sigla PRF?",
         answer: "Polícia Rodoviária Federal.",
-        questionImage: "prf.png"
+        answerImage: "prf.png"
     },
     {
         id: 15,
@@ -97,13 +97,13 @@ const questions = [
         id: 17,
         question: "O que significa a sigla DENATRAN?",
         answer: "Departamento Nacional de Trânsito.",
-        questionImage: "denatran.png"
+        answerImage: "denatran.png"
     },
     {
         id: 18,
         question: "Qual é o sinal de trânsito que indica 'pare'?",
-        answer: "Um octógono vermelho.",
-        questionImage: "R-1.png"
+        answer: "Pare.",
+        answerImage: "R-1.png",
     },
     {
         id: 19,
@@ -115,7 +115,7 @@ const questions = [
         id: 20,
         question: "Qual é a cor do semáforo que indica 'siga'?",
         answer: "Verde.",
-        answerImage: "traffic_light_green.jpg",
+        answerImage: "traffic_light_green.png",
     },
     {
         id: 21,
@@ -136,9 +136,9 @@ const questions = [
     },
     {
         id: 24,
-        question: "O que significa uma placa de redonda com um 'E' cortado",
-        answer: "Estacionamento proibido.",
-        answerImage: "R-6a.png",
+        question: "Qual o nome desta placa?",
+        answer: "Proibido estacionar.",
+        questionImage: "R-6a.png",
     },
     {
         id: 25,
@@ -155,37 +155,37 @@ const questions = [
         id: 27,
         question: "Qual é a distância mínima que se deve manter de um ciclista ao ultrapassar?",
         answer: "1,5 metros.",
-        questionImage: "distancia_ciclista.png",
+        answerImage: "distancia_ciclista.png",
     },
     {
         id: 28,
-        question: "Placa que proíbe conversão à esquerda",
+        question: "Qual o nome desta placa?",
         answer: "Proibido virar à esquerda.",
-        questionImage: "R-4a.png",
+        quastionImage: "R-4a.png",
     },
     {
         id: 29,
         question: "O que significa a sigla CONTRAN?",
         answer: "Conselho Nacional de Trânsito.",
-        questionImage: "contran.jpeg",
+        answerImage: "contran.png",
     },
     {
         id: 30,
         question: "Qual é a punição por estacionar em vagas para pessoas com deficiência?",
         answer: "Multa e remoção do veículo.",
-        questionImage: "deficiente.jpeg",
+        questionImage: "deficiente.png",
     },
     {
         id: 31,
         question: "Qual é o limite de velocidade em áreas escolares?",
         answer: "30 km/h.",
-        questionImage: "R-19-30.png",
+        answerImage: "R-19-30.png",
     },
     {
         id: 32,
         question: "O que significam as placas de advertência?",
         answer: "Alerta sobre algum perigo à frente.",
-        questionImage: "A-0.png",
+        answerImage: "A-0.png",
     },
     {
         id: 33,
@@ -194,7 +194,7 @@ const questions = [
     },
     {
         id: 34,
-        question: "Placa que proíbe a circulação de veículos?",
+        question: "Qual o nome desta placa?",
         answer: "Proibido trânsito de automóveis",
         questionImage: "R-10.png",
     },
@@ -207,7 +207,7 @@ const questions = [
         id: 36,
         question: "Qual é o limite de velocidade em vias de trânsito rápido?",
         answer: "80 km/h.",
-        questionImage: "R-19-80.png",
+        answerImage: "R-19-80.png",
     },
     {
         id: 37,
@@ -227,13 +227,13 @@ const questions = [
     },
     {
         id: 40,
-        question: "O que significa a sigla DSV?",
-        answer: "Departamento de Operação do Sistema Viário.",
+        question: "Quando é obrigatório ligar os faróis durante o dia?",
+        answer: "Em túneis ou sob chuva intensa.",
     },
     {
         id: 41,
-        question: "Qual é o significado do sinal de trânsito circular com uma faixa diagonal?",
-        answer: "Proibido estacionar.",
+        question: "Quando é obrigatório o uso do pisca-alerta em caso de parada?",
+        answer: "Em situações de emergência ou sinalização de advertência.",
     },
     {
         id: 42,
@@ -242,8 +242,8 @@ const questions = [
     },
     {
         id: 43,
-        question: "O que significa a sigla SETRAN?",
-        answer: "Secretaria de Trânsito.",
+        question: "Quando é obrigatório utilizar o farol baixo durante o dia?",
+        answer: "Em rodovias, fora do perímetro urbano.",
     },
     {
         id: 44,
@@ -257,27 +257,32 @@ const questions = [
     },
     {
         id: 46,
-        question: "O que significa a sigla DNER?",
-        answer: "Departamento Nacional de Estradas de Rodagem.",
+        question: "Qual o nome desta placa?",
+        answer: "Pista sinuosa à Direita.",
+        questionImage: "A-3b.png",
     },
     {
         id: 47,
-        question: "Qual é o significado do sinal de trânsito retangular com uma faixa horizontal?",
+        question: "Qual o nome desta placa?",
         answer: "Proibido ultrapassar.",
+        questionImage: "R-7.png",
     },
     {
         id: 48,
-        question: "O que é uma via de mão única?",
-        answer: "Uma via em que o tráfego flui em apenas uma direção.",
+        question: "Qual o nome desta placa?",
+        answer: "Proibido acionar buzina ou sinal sonoro.",
+        questionImage: "R-20.png",
     },
     {
         id: 49,
-        question: "O que significa a sigla SMT?",
-        answer: "Secretaria Municipal de Trânsito.",
+        question: "Qual o nome desta placa?",
+        answer: "Trânsito proibido a carros de mão.",
+        questionImage: "R-40.png",
     },
     {
         id: 50,
-        question: "O que é um motorista habilitado?",
-        answer: "Um condutor que possui CNH válida.",
+        question: "Qual o nome desta placa?",
+        answer: "Conserve-se à direita.",
+        questionImage: "R-23.png",
     },
 ]

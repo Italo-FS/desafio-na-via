@@ -1,3 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	list-style: none;
+	border: none;
+}
+
+button,
+header,
+.menu__header,
+.menu__input {
+	font-family: 'Press Start 2P', cursive;
+}
+
 .menu-form {
 	align-items: center;
 	display: flex;
@@ -22,6 +39,31 @@
 	margin-bottom: 50px;
 }
 
+.menu__input {
+	border: 2px solid #333;
+	border-radius: 8px;
+	color: #333;
+	font-size: 1em;
+	max-width: 300px;
+	outline: none;
+	padding: 15px;
+	width: 100%;
+}
+
+.menu__buttonContainer {
+	display: grid;
+	gap: 10px;
+	justify-items: center;
+}
+
+.menu__buttonContainer.vertical {
+	grid-template-columns: repeat(1, 1fr);
+}
+
+.menu__buttonContainer.horizontal {
+	grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+}
+
 .token__conexao {
 	align-items: center;
 	display: flex;
@@ -39,7 +81,7 @@
 	align-items: center;
 	display: flex;
 	flex-direction: column;
-	justify-content: center;	
+	justify-content: center;
 }
 
 .container__token p {
@@ -61,13 +103,32 @@
 	font-size: 1em;
 	max-width: 300px;
 	padding: 15px;
-	width: 100%;
+	min-width: 300px;
 	margin: 3px;
+}
+
+.menu__button:disabled {
+	background-color: #eee;
+	border: 2px solid #969595;
+	color: #aaa;
+	cursor: auto;
 }
 
 .invisible {
 	display: none;
-  }
+}
+
+/* Geral */
+.back_button {
+	background-color: #E68301;
+	border-color: #FFBA00;
+}
+
+/* Difficulty */
+.login__button_play {
+	background-color: #00cc66;
+	border-color: #b2df28;
+}
 
 /* Difficulty */
 .difficulty__button_easy {

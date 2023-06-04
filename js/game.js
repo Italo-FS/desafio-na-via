@@ -1,3 +1,6 @@
+// localStorage.setItem('difficulty', 'test');
+// revealAllCards()
+
 const grid = document.querySelector(".grid");
 const spanPlayer = document.querySelector(".player");
 const timer = document.querySelector(".timer");
@@ -27,7 +30,8 @@ buttonGiveUpGame.addEventListener("click", () => {
 const difficulty = {
     easy: 3,
     medium: 5,
-    hard: 50,
+    hard: 7,
+    test: 50,
 };
 
 const createElement = (tag, className) => {
@@ -49,16 +53,23 @@ const checkEndGame = () => {
 
     if (disabledCards.length === numberOfQuestions * 2) {
         clearInterval(this.loop);
+        let string = '';
 
-        document.querySelector("#mainMessage").innerHTML = `Parabéns ${
-            players.getActualPlayer().name
-        }!<br><br>
-		Agora, gostaríamos de pedir sua ajuda para preencher uma pesquisa importante de usabilidade. Sua opinião é
-		valiosa para nós, pois nos ajuda a aprimorar ainda mais o jogo e torná-lo uma ferramenta ainda melhor para a
-		educação e conscientização sobre as regras e práticas de segurança no trânsito.
-		<br><br> Clique no seguinte <a href="https://forms.gle/3S8ZK1ApnFpP8DBK9">link</a> para acessar o formulário
-		de pesquisa.
-		`;
+        let winner = players.getPlayerWithBiggerScore();
+        if (winner.length === 1) {
+            string = `Parabéns ${winner[0].name}!`
+        } else {
+            string = 'Empate!';
+        }
+
+        document.querySelector("#mainMessage").innerHTML = `${string}!<br><br>
+        Agora, gostaríamos de pedir sua ajuda para preencher uma pesquisa importante de usabilidade. Sua opinião é
+        valiosa para nós, pois nos ajuda a aprimorar ainda mais o jogo e torná-lo uma ferramenta ainda melhor para a
+        educação e conscientização sobre as regras e práticas de segurança no trânsito.
+        <br><br> Clique no seguinte <a href="https://forms.gle/3S8ZK1ApnFpP8DBK9">link</a> para acessar o formulário
+        de pesquisa.
+        `;
+        
         document.querySelector(".game-message").hidden = false;
     }
 };
@@ -86,7 +97,7 @@ const checkCards = () => {
             secondCard = "";
 
             players.switchTurn();
-        }, 1000);
+        }, 1500);
     }
 };
 
@@ -118,16 +129,20 @@ const sortQuestions = () => {
     return sorteio;
 };
 
-const createCard = (id, content, imageName) => {
+const createCard = (id, content, imageName, background = '') => {
     const card = createElement("div", "card");
     const front = createElement("div", "face front");
     const back = createElement("div", "face back");
     const p = createElement("p", "card-content");
     const img = createElement("img", "card-image");
 
-    if (imageName != undefined) {
+    if (imageName != undefined && imageName != '') {
         img.src = `../images/questions/${imageName}`;
         front.appendChild(img);
+    }
+
+    if (background != undefined && background != '') {
+	    front.style.backgroundImage = `url(${background})`;
     }
 
     p.innerHTML = content;
@@ -142,26 +157,33 @@ const createCard = (id, content, imageName) => {
     return card;
 };
 
+const revealAllCards = () => {
+    const cards = document.querySelectorAll(".card");
+    cards.forEach(x => x.classList.add("reveal-card"));
+}
+
 const loadGame = () => {
     const sortedCards = sortQuestions();
     let selectedCards = [];
     sortedCards.map((x) => {
         selectedCards.push({
             id: x.id,
-            content: `Pergunta<br>${x.question}`,
+            content: `<p class='card-header'><b>Pergunta</b></p><p>${x.question}</p>`,
             imageName: x.questionImage,
+            background: '../images/question.png'
         });
         selectedCards.push({
             id: x.id,
-            content: `Resposta<br>${x.answer}`,
+            content: `<p class='card-header'><b>Resposta</b></p><p>${x.answer}</p>`,
             imageName: x.answerImage,
+            background: '../images/answer.png'
         });
     });
 
     const shuffledArray = selectedCards.sort(() => Math.random() - 0.5);
 
     shuffledArray.forEach((x) => {
-        const card = createCard(x.id, x.content, x.imageName);
+        const card = createCard(x.id, x.content, x.imageName, x.background);
         grid.appendChild(card);
     });
 };
@@ -203,6 +225,24 @@ function Players() {
 
     this.getActualPlayer = () => {
         return this.__players[this.getTurnOwner()];
+    };
+
+    this.getBestScore = () => {
+        let bestScore = 0;
+        for (let i = 0; i < this.__players.length; i++) {
+            bestScore = (this.__players[i].getScore() > bestScore) ? this.__players[i].getScore() : bestScore;
+        }
+        return bestScore;
+    }
+
+    this.getPlayerWithBiggerScore = () => {
+        let bestScore = this.getBestScore();
+        console.log()
+        let players = [];
+        for (let i = 0; i < this.__players.length; i++) {
+            if (this.__players[i].getScore() === bestScore) players.push(this.__players[i]);
+        }
+        return players;
     };
 
     this.switchTurn = (index = -1) => {
@@ -268,6 +308,10 @@ function Player(playerName, playerColor) {
     this.addScore = (score) => {
         this.score += score;
         this.updateScore();
+    };
+
+    this.getScore = () => {
+        return this.score;
     };
 
     this.updateScore = () => {
