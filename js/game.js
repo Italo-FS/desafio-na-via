@@ -102,9 +102,12 @@ const checkCards = () => {
 };
 
 const revealCard = ({ target }) => {
-    if (target.parentNode.className.includes("reveal-card")) {
-        return;
+    const testIfAlreadyRevealed = (el) => {
+        while ((el = el.parentElement) && !el.classList.contains('reveal-card'));
+        return el;
     }
+
+    if (testIfAlreadyRevealed(target) != null) return;
 
     if (firstCard === "") {
         target.parentNode.classList.add("reveal-card");
