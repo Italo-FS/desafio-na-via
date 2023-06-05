@@ -18,7 +18,7 @@ buttonGiveUpGame.addEventListener("click", () => {
 
     document.querySelector(
         "#mainMessage"
-    ).innerHTML = `Entendemos que nem sempre as coisas saem como esperado, e respeitamos sua decisão.<br><br>Apesar de você ter do jogo, ainda gostaríamos de contar com sua participação na pesquisa de usabilidade relacionada a
+    ).innerHTML = `Entendemos que nem sempre as coisas saem como esperado, e respeitamos sua decisão.<br><br>Apesar de você ter desistido do jogo, ainda gostaríamos de contar com sua participação na pesquisa de usabilidade relacionada a
 	ele. Sua opinião nos ajuda a aprimorar ainda mais o jogo e torná-lo uma ferramenta ainda melhor para a
 	educação e conscientização sobre as regras e práticas de segurança no trânsito.
 	<br><br> Clique no seguinte <a href="https://forms.gle/3S8ZK1ApnFpP8DBK9">link</a> para acessar o formulário
