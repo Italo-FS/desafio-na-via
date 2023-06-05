@@ -3,7 +3,7 @@ const button = document.querySelector('.menu__button');
 const form = document.querySelector('.menu-form');
 
 const validateInput = ({ target }) => {
-	if (target.value.length > 2) {
+	if (target.value.length > 1) {
 		button.removeAttribute('disabled');
 		return;
 	}
@@ -13,7 +13,7 @@ const validateInput = ({ target }) => {
 
 const handleSubmit = (event) => {
 	event.preventDefault();
-	if (document.querySelector("input").value.length < 3) return;
+	if (document.querySelector("input").value.length < 2) return;
 	localStorage.setItem('playerAName', input.value);
 	window.location = 'pages/mode.html';
 }

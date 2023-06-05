@@ -161,7 +161,7 @@ const questions = [
         id: 28,
         question: "Qual o nome desta placa?",
         answer: "Proibido virar à esquerda.",
-        quastionImage: "R-4a.png",
+        questionImage: "R-4a.png",
     },
     {
         id: 29,
